@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Django App{% endblock %}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        nav { background: #333; padding: 10px; }
+        nav a { color: white; margin: 10px; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="{% url 'user_list' %}">Users</a>
+    <a href="{% url 'user_create' %}">Create User</a>
+    <a href="{% url 'logout_confirm' %}">Logout</a>
+    <a href="{% url 'view_logs' %}">Logs</a>
+</nav>
+
+<div>
+    {% block content %}
+    <!-- Child templates will inject their content here -->
+    {% endblock %}
+</div>
+
+</body>
+</html>

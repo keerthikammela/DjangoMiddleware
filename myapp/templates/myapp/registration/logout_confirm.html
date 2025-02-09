@@ -1,0 +1,10 @@
+{% extends "myapp/registration/base.html" %}
+
+{% block content %}
+<h2>Are you sure you want to log out?</h2>
+<form action="{% url 'logout' %}" method="post">
+    {% csrf_token %}
+    <button type="submit">Yes, Logout</button>
+</form>
+<a href="{% url 'user_list' %}">Cancel</a>
+{% endblock %}
